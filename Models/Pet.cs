@@ -6,7 +6,7 @@ using System;
 namespace pet_hotel
 {
     public enum PetBreedType {
-        Shepherd, Poodle, Beagle, Bulldog, Terrier, Boxer, Labrador, Retriever,
+        Shepherd, Poodle, Beagle, Bulldog, Terrier, Boxer, Labrador, Retriever
     }
     public enum PetColorType {
         White, Black, Golden, Tricolor, Spotted
