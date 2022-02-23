@@ -15,10 +15,13 @@ namespace pet_hotel
         public string name {get; set;}
         [Required]
         public PetBreedType breed {get; set;}
-        public DateTime checkedInAt {get; set;}
+        
+        public DateTime? checkedInAt {get; set;}
 
         [Required, ForeignKey("PetOwners")]
         public int petOwnerid {get; set;}
+
+        public PetOwner ownedBy {get; set;}
 
         
     }
