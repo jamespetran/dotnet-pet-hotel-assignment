@@ -36,7 +36,7 @@ namespace pet_hotel.Controllers
         //     Pet newPet1 = new Pet {
         //         name = "Big Dog",
         //         petOwner = blaine,
-        //         color = PetColorType.Black,
+        //         color = PetColorType.Black,i
         //         breed = PetBreedType.Poodle,
         //     };
 
@@ -49,5 +49,13 @@ namespace pet_hotel.Controllers
 
         //     return new List<Pet>{ newPet1, newPet2};
         // }
+
+        [HttpPost]
+
+        public ActionResult<Pet> Post(Pet pet) {
+            _context.Add(pet);
+            _context.SaveChanges();
+            return pet;
+        }
     }
 }
