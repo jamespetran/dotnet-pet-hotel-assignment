@@ -23,12 +23,25 @@ namespace pet_hotel.Controllers
             return _context.PetOwners;
         }
 
+        // Post PetOwner Route
         [HttpPost]
 
         public ActionResult<PetOwner> Post(PetOwner petowner) {
 
             // Add this Petowner to the database
             _context.Add(petowner);
+            _context.SaveChanges();
+
+            return petowner;
+        }
+
+        // Update PetOwner route
+        [HttpPut("{id}")]
+
+        public PetOwner Put(int id, PetOwner petowner) {
+            petowner.id = id;
+
+            _context.Update(petowner);
             _context.SaveChanges();
 
             return petowner;
