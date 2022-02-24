@@ -56,7 +56,7 @@ namespace pet_hotel.Controllers
 
         }
         
-        [HttpGet ("{id}")]
+        [HttpGet ("{id}/checkin")]
         public PetOwner GetOwner(int id) {
             PetOwner petOwner = _context.PetOwners.Find(id);
 

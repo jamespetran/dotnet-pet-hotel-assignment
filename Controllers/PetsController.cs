@@ -70,8 +70,10 @@ namespace pet_hotel.Controllers
             return pet;
         }
 
-        [HttpPut("{id}")]
-        public Pet Put(int id, Pet pet) {
+
+        // [Route("/api/:id/checkin/")]
+        [HttpPut("{id}/checkin")]
+        public IActionResult Put(int id, Pet pet) {
             pet.id = id;
 
             _context.Update(pet);
