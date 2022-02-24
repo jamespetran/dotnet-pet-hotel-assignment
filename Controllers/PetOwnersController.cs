@@ -23,6 +23,7 @@ namespace pet_hotel.Controllers
             return _context.PetOwners;
         }
 
+        // Post PetOwner Route
         [HttpPost]
 
         public ActionResult<PetOwner> Post(PetOwner petowner) {
@@ -34,12 +35,25 @@ namespace pet_hotel.Controllers
             return petowner;
         }
 
+
         [HttpDelete("{id}")]
 
         public void Delete(int id) {
             PetOwner petOwner = _context.PetOwners.Find(id);
             _context.PetOwners.Remove(petOwner);
             _context.SaveChanges();
+
+        // Update PetOwner route
+        [HttpPut("{id}")]
+
+        public PetOwner Put(int id, PetOwner petowner) {
+            petowner.id = id;
+
+            _context.Update(petowner);
+            _context.SaveChanges();
+
+            return petowner;
+
         }
     }
 }
