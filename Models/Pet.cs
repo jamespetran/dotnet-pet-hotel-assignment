@@ -19,6 +19,8 @@ namespace pet_hotel
         public string name {get; set;}
         [Required]
         public PetBreedType breed {get; set;}
+
+        public PetColorType color {get; set;}
         
         public DateTime? checkedInAt {get; set;}
 
