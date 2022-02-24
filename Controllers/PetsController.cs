@@ -56,7 +56,6 @@ namespace pet_hotel.Controllers
             Pet pet = _context.Pets.Find(id);
             _context.Pets.Remove(pet);
             _context.SaveChanges();
-            return pet;
         }
     }
 }
