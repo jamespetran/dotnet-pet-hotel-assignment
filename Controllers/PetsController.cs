@@ -50,10 +50,11 @@ namespace pet_hotel.Controllers
         //     return new List<Pet>{ newPet1, newPet2};
         // }
 
-        [HttpPost]
+        [HttpDelete("{id}")]
 
-        public ActionResult<Pet> Post(Pet pet) {
-            _context.Add(pet);
+        public void Delete(int id) {
+            Pet pet = _context.Pets.Find(id);
+            _context.Pets.Remove(pet);
             _context.SaveChanges();
             return pet;
         }
