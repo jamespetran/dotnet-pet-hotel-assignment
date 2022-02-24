@@ -19,11 +19,11 @@ namespace pet_hotel.Controllers
             _context = context;
         }
 
-        // This is just a stub for GET / to prevent any weird frontend errors that 
-        // occur when the route is missing in this controller
+        // Get all pets
         [HttpGet]
         public IEnumerable<Pet> GetPets() {
-            return new List<Pet>();
+            return _context.Pets
+                .Include(pet => pet.petOwner);
         }
 
         // [HttpGet]
@@ -57,5 +57,17 @@ namespace pet_hotel.Controllers
             _context.Pets.Remove(pet);
             _context.SaveChanges();
         }
+
+        [HttpPost]
+
+        public ActionResult<Pet> Post(Pet pet) {
+
+            // Add this Petowner to the database
+            _context.Add(pet);
+            _context.SaveChanges();
+
+            return pet;
+        }
+
     }
 }

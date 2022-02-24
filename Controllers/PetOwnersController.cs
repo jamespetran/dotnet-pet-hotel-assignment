@@ -26,13 +26,13 @@ namespace pet_hotel.Controllers
         // Post PetOwner Route
         [HttpPost]
 
-        public ActionResult<PetOwner> Post(PetOwner petowner) {
+        public ActionResult<PetOwner> Post(PetOwner petOwner) {
 
             // Add this Petowner to the database
-            _context.Add(petowner);
+            _context.Add(petOwner);
             _context.SaveChanges();
 
-            return petowner;
+            return petOwner;
         }
 
 
@@ -46,13 +46,13 @@ namespace pet_hotel.Controllers
 
         // Update PetOwner route
         [HttpPut("{id}")]
-        public PetOwner Put(int id, PetOwner petowner) {
-            petowner.id = id;
+        public PetOwner Put(int id, PetOwner petOwner) {
+            petOwner.id = id;
 
-            _context.Update(petowner);
+            _context.Update(petOwner);
             _context.SaveChanges();
 
-            return petowner;
+            return petOwner;
 
         }
         
