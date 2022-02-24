@@ -35,6 +35,14 @@ namespace pet_hotel.Controllers
             return petowner;
         }
 
+
+        [HttpDelete("{id}")]
+
+        public void Delete(int id) {
+            PetOwner petOwner = _context.PetOwners.Find(id);
+            _context.PetOwners.Remove(petOwner);
+            _context.SaveChanges();
+
         // Update PetOwner route
         [HttpPut("{id}")]
 
@@ -45,6 +53,7 @@ namespace pet_hotel.Controllers
             _context.SaveChanges();
 
             return petowner;
+
         }
     }
 }
