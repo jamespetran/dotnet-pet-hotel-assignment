@@ -42,10 +42,10 @@ namespace pet_hotel.Controllers
             PetOwner petOwner = _context.PetOwners.Find(id);
             _context.PetOwners.Remove(petOwner);
             _context.SaveChanges();
+        }
 
         // Update PetOwner route
         [HttpPut("{id}")]
-
         public PetOwner Put(int id, PetOwner petowner) {
             petowner.id = id;
 
@@ -54,6 +54,13 @@ namespace pet_hotel.Controllers
 
             return petowner;
 
+        }
+        
+        [HttpGet ("{id}")]
+        public PetOwner GetOwner(int id) {
+            PetOwner petOwner = _context.PetOwners.Find(id);
+
+            return petOwner;
         }
     }
 }
