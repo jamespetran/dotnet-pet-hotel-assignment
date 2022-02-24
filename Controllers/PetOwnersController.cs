@@ -22,5 +22,16 @@ namespace pet_hotel.Controllers
         public IEnumerable<PetOwner> GetPets() {
             return _context.PetOwners;
         }
+
+        [HttpPost]
+
+        public ActionResult<PetOwner> Post(PetOwner petowner) {
+
+            // Add this Petowner to the database
+            _context.Add(petowner);
+            _context.SaveChanges();
+
+            return petowner;
+        }
     }
 }
