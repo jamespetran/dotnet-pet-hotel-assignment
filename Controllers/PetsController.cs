@@ -49,9 +49,8 @@ namespace pet_hotel.Controllers
 
         //     return new List<Pet>{ newPet1, newPet2};
         // }
-<<<<<<< HEAD
-
-        [HttpDelete("{id}")]
+    
+       [HttpDelete("{id}")]
 
         public void Delete(int id) {
             Pet pet = _context.Pets.Find(id);
@@ -59,7 +58,5 @@ namespace pet_hotel.Controllers
             _context.SaveChanges();
             return pet;
         }
-=======
->>>>>>> parent of bf2bfd9... Wrote basic outline of delete for Pets
     }
 }
